@@ -1,16 +1,73 @@
-test_library (unittest.loader._FailedTest) ... ERROR
+test_book_is_available_initially (test_library.TestBook)
+Book should be available when first created. ... ok
+test_book_unavailable_when_all_copies_borrowed (test_library.TestBook)
+Book should be unavailable when all copies are borrowed. ... ok
+test_borrow_copy_reduces_available_copies (test_library.TestBook)
+Borrowing should reduce available copies by 1. ... ok
+test_cannot_borrow_when_unavailable (test_library.TestBook)
+Borrowing should fail when no copies available. ... ok
+test_return_copy_increases_available_copies (test_library.TestBook)
+Returning should increase available copies by 1. ... ok
+test_add_book_generates_unique_ids (test_library.TestBookService)
+Each book added should have a unique ID. ... ok
+test_add_book_returns_book_object (test_library.TestBookService)
+Adding a book should return a Book object. ... ok
+test_get_all_books (test_library.TestBookService)
+get_all_books should return all added books. ... ok
+test_get_book_returns_correct_book (test_library.TestBookService)
+get_book should return the correct book by ID. ... ok
+test_get_book_returns_none_for_invalid_id (test_library.TestBookService)
+get_book should return None for non existent ID. ... ok
+test_remove_book_deletes_book (test_library.TestBookService)
+Removing a book should delete it from the system. ... ok
+test_remove_book_returns_false_for_invalid_id (test_library.TestBookService)
+Removing non existent book should return False. ... ok
+test_search_book_by_author (test_library.TestBookService)
+Search should find books matching author keyword. ... ok
+test_search_book_by_title (test_library.TestBookService)
+Search should find books matching title keyword. ... ok
+test_search_book_no_results (test_library.TestBookService)
+Search should return empty list if nothing matches. ... ok
+test_borrow_book_creates_loan (test_library.TestLoanService)
+Borrowing a book should create and return a Loan object. ... ok
+test_borrow_book_fails_for_inactive_member (test_library.TestLoanService)
+Borrowing should fail if member is inactive. ... ok
+test_borrow_book_fails_when_no_copies (test_library.TestLoanService)
+Borrowing should fail when no copies are available. ... ok
+test_borrow_book_reduces_available_copies (test_library.TestLoanService)
+Borrowing should reduce available copies. ... ok
+test_get_active_loans (test_library.TestLoanService)
+get_active_loans should return only active loans. ... ok
+test_loan_due_date_is_14_days (test_library.TestLoanService)
+Loan due date should be 14 days after borrow date. ... ok
+test_return_book_closes_loan (test_library.TestLoanService)
+Returning a book should close the loan. ... ok
+test_return_book_increases_available_copies (test_library.TestLoanService)
+Returning should increase available copies. ... ok
+test_borrow_book_adds_to_list (test_library.TestMember)
+Borrowing adds book_id to member borrowed list. ... ok
+test_deactivate_member (test_library.TestMember)
+Deactivating sets is_active to False. ... ok
+test_member_is_active_initially (test_library.TestMember)
+Member should be active when first created. ... ok
+test_return_book_not_borrowed (test_library.TestMember)
+Returning a book not borrowed should return False. ... ok
+test_return_book_removes_from_list (test_library.TestMember)
+Returning removes book_id from member borrowed list. ... ok
+test_deactivate_member (test_library.TestMemberService)
+Deactivating a member should set is_active to False. ... ok
+test_get_member_returns_correct_member (test_library.TestMemberService)
+get_member should return correct member by ID. ... ok
+test_get_member_returns_none_for_invalid_id (test_library.TestMemberService)
+get_member should return None for non existent ID. ... ok
+test_register_member_generates_unique_ids (test_library.TestMemberService)
+Each member registered should have a unique ID. ... ok
+test_register_member_returns_member (test_library.TestMemberService)
+Registering a member should return a Member object. ... ok
 
-======================================================================
-ERROR: test_library (unittest.loader._FailedTest)
 ----------------------------------------------------------------------
-ImportError: Failed to import test module: test_library
-Traceback (most recent call last):
-  File "C:\Users\Faizan\AppData\Local\Programs\Python\Python310\lib\unittest\loader.py", line 154, in loadTestsFromName
-    module = __import__(module_name)
-ModuleNotFoundError: No module named 'test_library'
+Ran 33 tests in 0.003s
 
-
-----------------------------------------------------------------------
-Ran 1 test in 0.001s
-
-FAILED (errors=1)
+OK
+Member account is not active.
+No copies available.
